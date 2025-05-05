@@ -1,0 +1,123 @@
+/* Import de la police Chewy pour une ambiance ludique */
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Chewy', cursive;
+  /* Fond en dégradé pour une ambiance colorée */
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffeecd2);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+h1 {
+  color: #ff6f61;
+  margin-bottom: 20px;
+}
+
+.control-panel {
+  margin-bottom: 20px;
+}
+
+.control-panel label {
+  font-size: 1.2em;
+  color: #2c3e50;
+}
+
+select {
+  font-size: 1.2em;
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+}
+
+button {
+  font-size: 1.2em;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 15px;
+  background: #27ae60;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #1e8449;
+}
+
+.quiz-section {
+  margin-top: 20px;
+}
+
+/* Affichage de la question */
+.question {
+  font-size: 2em;
+  margin: 20px 0;
+  color: #2980b9;
+}
+
+/* Zone des choix multiples */
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.choice-btn {
+  font-size: 1.2em;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 15px;
+  background: #27ae60;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+  min-width: 70px;
+}
+
+.choice-btn:hover {
+  background: #1e8449;
+}
+
+.choice-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Panneau du score, du suivi du nombre de calculs et du temps */
+.score-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.score-panel span {
+  font-size: 1.2em;
+  margin: 3px 0;
+  color: #27ae60;
+}
+
+/* Feedback de réponse */
+.feedback {
+  font-size: 1.5em;
+  margin-top: 10px;
+  font-weight: bold;
+}
