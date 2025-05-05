@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arithmétique Ludique</title>
+  <!-- Couleur du thème pour la barre de statut -->
+  <meta name="theme-color" content="#27ae60">
+  <!-- Lien vers le manifeste -->
+  <link rel="manifest" href="manifest.json">
+  <!-- On utilise une police ludique -->
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <h1>Arithmétique Ludique</h1>
+    
+    <!-- Panneau de sélection de l'opération -->
+    <div class="control-panel" id="controlPanel">
+      <label for="operationSelect">Choisissez l'opération :</label>
+      <select id="operationSelect">
+        <option value="addition">Addition</option>
+        <option value="soustraction">Soustraction</option>
+        <option value="multiplication">Multiplication</option>
+        <option value="division">Division</option>
+      </select>
+      <button id="startBtn" onclick="startPractice()">Démarrer</button>
+    </div>
+    
+    <!-- Section quiz -->
+    <div class="quiz-section" id="quizSection" style="display: none;">
+      <div class="score-panel">
+        <span id="performanceDisplay">Taux de Réussite: 0%</span>
+        <span id="calcCountDisplay">Calculs effectués: 0</span>
+        <span id="timeDisplay">Temps: 0 minutes</span>
+        <button id="changeOpBtn" onclick="changeOperation()">Changer d'opération</button>
+      </div>
+      <div id="questionArea" class="question"></div>
+      <!-- Conteneur pour les boutons de choix multiples -->
+      <div id="choices" class="choices"></div>
+      <div class="buttons">
+        <button id="nextBtn" onclick="newQuestion()" style="display: none;">Question Suivante</button>
+      </div>
+      <div id="feedback" class="feedback"></div>
+    </div>
+  </div>
+  
+  <!-- Effets sonores -->
+  <audio id="correctSound" src="correct.mp3" preload="auto"></audio>
+  <audio id="incorrectSound" src="incorrect.mp3" preload="auto"></audio>
+  
+  <!-- Insertion du script principal -->
+  <script src="script.js"></script>
+  
+  <!-- Enregistrement du service worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(function(registration) {
+            console.log('Service worker enregistré avec succès, portée:', registration.scope);
+          })
+          .catch(function(error) {
+            console.error('L’enregistrement du service worker a échoué:', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
